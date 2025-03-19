@@ -15,9 +15,9 @@ provider "azurerm" {
 
 # Create Resource Group 
 resource "azurerm_resource_group" "rg" {
-  location = "eastus"
-  name     = "rg-workshop-terraform"
-  # tags = {
-  # "environment" = "terraform"
-  # }
+  location = var.azure_region
+  name     = var.resource_group_name
+      tags = {
+      "environment" = "terraform"
+ }
 }
